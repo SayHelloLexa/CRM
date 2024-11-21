@@ -34,7 +34,7 @@
 
 /*Modal-window*/
 @import url("overlay.css");
-@import url("overlay_display_flex.css");
+@import url("")
 @import url("modal/modal.css");
 @import url("modal/modal__exit-button.css");
 @import url("form/form.css");
