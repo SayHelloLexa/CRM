@@ -9,16 +9,16 @@ const totalCost = document.querySelectorAll('.total-cost__count');
 
 const createRow = (obj) => {
   const tr = document.createElement('tr');
-  const table = document.querySelector('.crm__table .tbody');
+  const table = document.querySelector('.crm__table');
 
   tr.insertAdjacentHTML('beforeend', `
     <td class="table__data table__data_id">${obj.id}</td>
     <td class="table__data table__data_name">${obj.title}</td>
     <td class="table__data table__data_category">${obj.category}</td>
-    <td class="table__data table__data_unit">${obj.units}</td>
-    <td class="table__data table__data_unit-count">${obj.count}</td>
+    <td class="table__data table__data_unit">${obj.unit}</td>
+    <td class="table__data table__data_unit-count">5</td>
     <td class="table__data table__data_price">${obj.price}</td>
-    <td class="table__data table__data_sum">${obj.price * obj.count}</td>
+    <td class="table__data table__data_sum">${obj.sum}</td>
     <td class="table__data table__data_btn">
       <button type="button">
         <img src="img/clarity_picture-line.svg" alt="иконка изображения товара">

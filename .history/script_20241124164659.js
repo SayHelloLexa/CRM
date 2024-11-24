@@ -9,7 +9,7 @@ const totalCost = document.querySelectorAll('.total-cost__count');
 
 const createRow = (obj) => {
   const tr = document.createElement('tr');
-  const table = document.querySelector('.crm__table .tbody');
+  const table = document.querySelector('.crm__table');
 
   tr.insertAdjacentHTML('beforeend', `
     <td class="table__data table__data_id">${obj.id}</td>
