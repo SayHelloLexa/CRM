@@ -2,6 +2,8 @@
 
 const createRow = (obj) => {
   const tr = document.createElement('tr');
+  tr.classList.add('table__row_good');
+
   const table = getDomElements().crmTable;
 
   tr.insertAdjacentHTML('beforeend', `
@@ -22,7 +24,7 @@ const createRow = (obj) => {
       </button>
 
       <button type="button">
-        <img src="img/ant-design_delete-outlined.svg" alt="иконка удаления">
+        <img class="delete-icon" src="img/ant-design_delete-outlined.svg" alt="иконка удаления">
       </button>
     </td>
   `);

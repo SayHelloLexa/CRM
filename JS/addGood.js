@@ -11,16 +11,11 @@ addGoodBtn.addEventListener('click', () => {
   console.log(addGoodOverlay.classList);
 });
 
-overlay.addEventListener('click', () => {
-  addGoodOverlay.classList.remove('overlay_display_flex');
-  console.log(addGoodOverlay.classList);
-});
-
-modalWindow.addEventListener('click', event => {
-  event.stopPropagation();
-});
-
-exitButton.addEventListener('click', () => {
-  addGoodOverlay.classList.remove('overlay_display_flex');
-  console.log(addGoodOverlay.classList);
+overlay.addEventListener('click', e => {
+  const target = e.target;
+  if (target === overlay || target.classList.contains('modal__exit-icon')) {
+    addGoodOverlay.classList.remove('overlay_display_flex');
+    console.log(addGoodOverlay.classList);
+    console.log('правильно')
+  }
 });

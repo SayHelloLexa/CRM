@@ -11,6 +11,8 @@ const getDomElements = () => {
     disabledInput: document.querySelectorAll('.form__input_disabled'),
     totalCost: document.querySelectorAll('.total-cost__count'),
     crmTable: document.querySelector('.crm__table .tbody'),
+    tableRow: document.querySelectorAll('.table__row_good'),
+    tableRowDeleteButton: document.querySelectorAll('.delete-icon'),
     callModal: document.querySelector('.call-modal'),
     modalExitButton: document.querySelector('.modal__exit-button'),
     addGoodOverlay: document.querySelector('.overlay_add-goods'),
