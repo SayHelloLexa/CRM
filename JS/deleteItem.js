@@ -1,19 +1,18 @@
 'use strict';
 
-const deleteItem = () => {
-    const deleteButton = getDomElements().tableRowDeleteButton;  
+const updDelButtons = () => {
+    return getDomElements().tableRowDeleteButton; 
+}
 
-    deleteButton.forEach((button, index) => {
-        button.addEventListener('click', () => {
-            const tableRow = button.closest('.table__row_good');
+console.log(updDelButtons());
 
-            if (tableRow) {
-                tableRow.remove();
-                delete obj[index];
-                console.log(obj);
-            }
-        })
-    });
-};
-
-deleteItem();
+table.addEventListener('click', e => {
+    if (e.target.classList.contains('delete-icon')) {
+        const tableRow = e.target.closest('.table__row_good');
+        if (tableRow) {
+            tableRow.remove();
+            printTotalCost();
+            console.log('Удаление');
+        }
+    }
+});
