@@ -9,6 +9,7 @@
     <script defer src="JS/renderGoods.js"></script>
     <script defer src="JS/addGood.js"></script>
     <script defer src="JS/script.js"></script>
+    <script defer src="JS/calculateTotalCost.js"></script>
     <script defer src="JS/deleteItem.js"></script>
     <title>CRM</title>
 </head>
@@ -20,7 +21,7 @@
                 <h1 class="header__title">Cms</h1>
                 <p class="total-cost total-cost_header">
                     Итоговая стоимость:
-                    <span class="total-cost__count">$ 900.00</span>
+                    <span class="total-cost__count total-cost__count_header"></span>
                 </p>
             </div>
         </div>
@@ -109,7 +110,6 @@
             <div class="container container_modal">
                 <form
                     class="form"
-                    action="https://jsonplaceholder.typicode.com/posts"
                     method="POST"
                 >
                     <h1 class="form__title">Добавить товар</h1>
@@ -117,17 +117,17 @@
                     <div class="form__content">
                         <div class="input-wrapper input-wrapper_name">
                             <label class="form__label" for="product-name">Наименование</label>
-                            <input class="form__input" type="text" name="product-name" id="product-name">
+                            <input class="form__input" type="text" name="product-name" id="product-name" required>
                         </div>
     
                         <div class="input-wrapper input-wrapper_category">
                             <label class="form__label" for="category">Категория</label>
-                            <input class="form__input" type="text" name="category" id="category">
+                            <input class="form__input" type="text" name="category" id="category" required>
                         </div>
     
                         <div class="input-wrapper input-wrapper_unit">
                             <label class="form__label" for="units">Единицы измерения</label>
-                            <input class="form__input" type="text" name="units" id="units">
+                            <input class="form__input" type="text" name="units" id="units" required>
                         </div>
     
                         <div class="input-wrapper input-wrapper_discount">
@@ -141,18 +141,18 @@
     
                         <div class="input-wrapper input-wrapper_description">
                             <label class="form__label" for="description">Описание</label>
-                            <textarea class="form__textarea" name="description" id="description"></textarea>
+                            <textarea class="form__textarea" name="description" id="description" required></textarea>
                         </div>
     
                         <div class="input-wrapper input-wrapper_count">
                             <label class="form__label" for="quantity">Количество</label>
-                            <input class="form__input form__input_number" type="number" name="quantity" id="quantity" min="1">
+                            <input class="form__input form__input_number" type="number" name="quantity" id="quantity" min="1" required>
                         </div>
     
     
                         <div class="input-wrapper input-wrapper_price">
                             <label class="form__label" for="price">Цена</label>
-                            <input class="form__input form__input_number" type="number" name="price" id="price" min="1">
+                            <input class="form__input form__input_number" type="number" name="price" id="price" min="1" required>
                         </div>
     
                         <div class="input-wrapper input-wrapper_file">
@@ -163,12 +163,13 @@
                                 name="product"
                                 id="product-img"
                                 accept="image/png, image/jpeg"
+                                required
                             >
                         </div>
                     </div>
     
                     <div class="sub-wrapper">
-                        <p class="total-cost">Итоговая стоимость: <span class="total-cost__count">$ 900.00</span></p>
+                        <p class="total-cost">Итоговая стоимость: <span class="total-cost__count total-cost__count_modal"></span></p>
     
                         <button class="form__submit-button" type="submit">Добавить товар</button>
                     </div>
