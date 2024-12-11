@@ -15,9 +15,9 @@ const category = modalForm.elements[1];
 const units = modalForm.elements[2];
 const count = modalForm.elements[6];
 const price = modalForm.elements[7];
+const file = modalForm.elements[8];
 
-console.log(totalCostMod);
-console.log(submitButton)
+file.removeAttribute('required');
 
 // Изменение состояния поля "Дисконт"
 checkbox.addEventListener('change', () => {
@@ -41,7 +41,11 @@ count.addEventListener('input', updTotalCostModal);
 
 // Добавление нового товара
 submitButton.addEventListener('click', e => {
-  e.preventDefault();
+  // e.preventDefault();
+
+  if (!modalForm.reportValidity()) {
+    return; 
+  }
 
   const tr = document.createElement('tr');
   tr.classList.add('table__row_good');
