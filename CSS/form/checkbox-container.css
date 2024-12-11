@@ -3,3 +3,19 @@
   margin-bottom: 12px;
   column-gap: 10px;
 }
+
+.checkbox-container input:nth-child(2) {
+  max-width: 200px;
+}
+
+@media (max-width: 1065px) {
+  .checkbox-container input:nth-child(2) {
+    max-width: 175px;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkbox-container input:nth-child(2) {
+    max-width: 192px;
+  }
+}
