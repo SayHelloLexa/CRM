@@ -41,11 +41,12 @@ price.addEventListener('input', updTotalCostModal);
 count.addEventListener('input', updTotalCostModal);
 
 // Cброс полей модального окна
-const resetModalForm = () => {
+const resetModalFormAndExit = () => {
   modalForm.reset();
   checkbox.nextElementSibling.setAttribute('disabled', 'disabled');
   checkbox.nextElementSibling.classList.add('form__input_disabled');
   totalCostMod.textContent = '';
+  addGoodOverlay.classList.remove('overlay_display_flex');
 }
 
 // Добавление нового товара
@@ -84,7 +85,7 @@ submitButton.addEventListener('click', e => {
 
   table.insertAdjacentElement('beforeend', tr);
   printTotalCost();
-  resetModalForm();
+  resetModalFormAndExit();
 });
 
 // Закрытие/открытие модального окна
