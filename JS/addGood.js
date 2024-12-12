@@ -31,6 +31,8 @@ checkbox.addEventListener('change', () => {
   }
 });
 
+
+// Обновление итоговой стоимости
 const updTotalCostModal = () => {
   totalCostMod.textContent = '$ ' +price.value * count.value;
 }
@@ -38,10 +40,17 @@ const updTotalCostModal = () => {
 price.addEventListener('input', updTotalCostModal);
 count.addEventListener('input', updTotalCostModal);
 
+// Cброс полей модального окна
+const resetModalForm = () => {
+  modalForm.reset();
+  checkbox.nextElementSibling.setAttribute('disabled', 'disabled');
+  checkbox.nextElementSibling.classList.add('form__input_disabled');
+  totalCostMod.textContent = '';
+}
 
 // Добавление нового товара
 submitButton.addEventListener('click', e => {
-  // e.preventDefault();
+  e.preventDefault();
 
   if (!modalForm.reportValidity()) {
     return; 
@@ -75,8 +84,7 @@ submitButton.addEventListener('click', e => {
 
   table.insertAdjacentElement('beforeend', tr);
   printTotalCost();
-  modalForm.reset();
-  console.log(updDelButtons());
+  resetModalForm();
 });
 
 // Закрытие/открытие модального окна
